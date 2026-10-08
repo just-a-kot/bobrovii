@@ -1,0 +1,516 @@
+/* ==========================================
+   1. ГЛОБАЛЬНЫЕ НАСТРОЙКИ
+   ========================================== */
+* {
+    box-sizing: border-box; /* Внутренние отступы и рамки не раздувают размер блоков */
+}
+
+/* ==========================================
+   2. НАСТРОЙКА ВСЕЙ СТРАНИЦЫ
+   ========================================== */
+body {
+    font-family: sans-serif;   /* Простой шрифт без засечек */
+    background-color: #f0f0f0; /* Серый цвет фона всей страницы */
+    max-width: 800px;          /* Максимальная ширина сайта */
+    margin: 0 auto;            /* Центрируем сайт ровно посередине экрана */
+    padding: 20px;             /* Отступ от краев экрана */
+}
+
+/* ==========================================
+   3. ОСНОВНЫЕ БЕЛЫЕ БЛОКИ (Шапка, Контент, Подвал)
+   ========================================== */
+header, main, footer {
+    background-color: white; /* Белый фон блоков */
+    padding: 20px;          /* Внутренний отступ от текста до края блока */
+    margin-bottom: 15px;    /* Внешний отступ снизу до следующего блока */
+    border-radius: 8px;     /* Скругление углов блока */
+}
+
+/* ==========================================
+   4. ШАПКА: Картинка СЛЕВА от текста
+   ========================================== */
+header {
+    display: flex;         /* Включаем гибкий режим: элементы встают в один ряд */
+    align-items: center;   /* Выравниваем картинку и заголовок по центру по высоте */
+    gap: 15px;             /* Отступ (пробел) между картинкой и текстом */
+    flex-wrap: wrap;       /* Разрешаем перенос элементов на маленьких экранах */
+}
+
+/* Картинка-логотип в шапке */
+header img {
+    display: block;        /* Убираем лишние нижние отступы у картинки */
+    width: 120px;          /* Ширина картинки */
+    height: auto;          /* Высота подстраивается автоматически без искажений */
+}
+
+/* Заголовок рядом с картинкой */
+header h1 {
+    margin: 0;             /* Убираем стандартные отступы вокруг заголовка */
+    font-size: 22px;        /* Размер шрифта заголовка */
+}
+
+/* Меню под картинкой и заголовком */
+header nav {
+    width: 100%;           /* Занимает всю ширину, чтобы опуститься под логотип */
+    margin-top: 10px;      /* Отступ сверху от логотипа до меню */
+}
+
+/* ==========================================
+   5. МЕНЮ НАВИГАЦИИ
+   ========================================== */
+nav ul {
+    list-style: none;      /* Убираем стандартные точки (маркеры) у списка */
+    padding: 0;            /* Убираем внутренний отступ списка */
+    margin: 0;             /* Убираем внешний отступ */
+}
+
+nav li {
+    display: inline-block; /* Выстраиваем пункты меню в одну строчку */
+    margin-right: 15px;    /* Отступ справа между ссылками */
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #2980b9;        /* Синий цвет ссылок */
+    font-weight: bold;     /* Делаем шрифт ссылок жирным */
+}
+
+/* ==========================================
+   6. КАРТОЧКИ СТАТЕЙ (Article)
+   ========================================== */
+article {
+    border: 1px solid #ddd; /* Тонкая серая рамка вокруг карточки */
+    padding: 15px;          /* Внутренний отступ от текста до рамки */
+    margin-top: 15px;       /* Внешний отступ сверху между карточками */
+    border-radius: 5px;     /* Скругление углов карточки */
+}
+
+article h3 {
+    margin-top: 0;         /* Убираем отступ сверху у заголовка статьи */
+    margin-bottom: 10px;   /* Отступ снизу от заголовка до текста */
+}
+
+/* ==========================================
+   7. КНОПКИ
+   ========================================== */
+
+/* Превращаем ссылку с классом btn в кнопку */
+a.btn {
+    display: inline-block; /* Позволяет задавать размеры и отступы ссылки */
+    background-color: #27ae60; /* Зеленый цвет кнопки */
+    color: white;              /* Белый цвет текста */
+    text-decoration: none;     /* Убираем стандартное подчеркивание ссылки */
+    padding: 8px 15px;         /* Внутренние отступы */
+    margin-top: 10px;          /* Отступ сверху от текста */
+    border-radius: 4px;        /* Скругление углов */
+}
+
+/* Эффект при наведении мышкой */
+a.btn:hover {
+    background-color: #219150;  /* Цвет становится чуть темнее */
+}
+/* ==========================================
+   8. HERO СЕКЦИЯ С ФОНОМ
+   ========================================== */
+.hero {
+    position: relative;
+    background-image: url('img/krasnoyarskstolby-TASS_1668659-pic4_zoom-1000x1000-66717.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Темный оверлей для лучшей читаемости текста */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-slogan {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-large {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #e74c3c;
+}
+
+.btn-large:hover {
+    background-color: #c0392b;
+}
+
+/* ==========================================
+   9. ABOUT ПАРК
+   ========================================== */
+.about-park {
+    padding: 30px 20px;
+}
+
+.about-park h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.about-grid article {
+    background-color: #f9f9f9;
+    border: none;
+    border-left: 4px solid #3498db;
+}
+
+.about-grid article h3 {
+    color: #2980b9;
+}
+/* ==========================================
+   10. ЗАГОЛОВОК СТРАНИЦЫ
+   ========================================== */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   11. СПЕЦПРЕДЛОЖЕНИЕ БАННЕР
+   ========================================== */
+.special-offer {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.special-offer::before {
+    content: "🔥";
+    position: absolute;
+    font-size: 100px;
+    opacity: 0.1;
+    top: -20px;
+    right: -20px;
+}
+
+.offer-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.offer-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.offer-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.special-offer .btn-large {
+    background-color: white;
+    color: #e74c3c;
+    font-weight: bold;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.special-offer .btn-large:hover {
+    background-color: #f8f9fa;
+    color: #c0392b;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   12. КАТАЛОГ УСЛУГ
+   ========================================== */
+.services-catalog {
+    padding: 30px 0;
+}
+
+.services-catalog h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Карточка услуги */
+.service-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
+.service-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-info h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    min-height: 3.5rem;
+}
+
+.service-conditions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.condition {
+    background-color: #e8f4fc;
+    color: #2980b9;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.service-description {
+    color: #5d6d7e;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.service-price {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.price-note {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.service-btn {
+    background-color: #3498db;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.service-btn:hover {
+    background-color: #2980b9;
+}
+
+/* ==========================================
+   13. ИНФОРМАЦИОННЫЙ БЛОК
+   ========================================== */
+.info-section {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.info-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-card p {
+    color: #5d6d7e;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   14. АДАПТИВНОСТЬ
+   ========================================== */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .page-header p {
+        font-size: 1.1rem;
+    }
+    
+    .offer-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .offer-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .service-info h3 {
+        font-size: 1.3rem;
+        min-height: auto;
+    }
+    
+    .price {
+        font-size: 1.6rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 30px 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .special-offer {
+        padding: 30px 15px;
+    }
+    
+    .offer-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .offer-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .services-catalog h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-info {
+        padding: 20px;
+    }
+}

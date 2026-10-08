@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Структура HTML страницы</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Иконка сайта во вкладке браузера -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <!-- Ссылка -->
+        <a href="index.html">
+            <!-- Изображение -->
+            <img src="img/1.png" alt="Логотип горнолыжного парка" width="150">
+        </a>
+        <div class="header-content">
+            <h1>Горнолыжный парк "Бобровый лог"</h1>
+
+            <!-- Навигационное меню -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Цены</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="#about">О парке</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="#buy-pass" class="btn btn-primary">Купить ски-пасс</a>
+    </header>
+
+    <!-- Основной контент страницы -->
+    <main>
+        <!-- Hero-секция -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Яркие эмоции в любой сезон</h1>
+                <p class="hero-slogan">Горнолыжный отдых мирового уровня рядом с заповедником "Столбы"</p>
+                <a href="#buy-pass" class="btn btn-large">Забронировать отдых</a>
+            </div>
+        </section>
+
+        <!-- Раздел "О парке" -->
+        <section id="about" class="about-park">
+            <h2>О парке</h2>
+            <div class="about-grid">
+                <article>
+                    <h3>Современная инфраструктура</h3>
+                    <p>На территории парка расположены 4 канатные дороги, включая современный гондольный подъемник и кресельные подъемники.</p>
+                </article>
+                <article>
+                    <h3>Трассы для всех уровней</h3>
+                    <p>Более 20 горнолыжных трасс общей протяженностью 35 км: от зеленых маршрутов для новичков до черных трасс для профессионалов.</p>
+                </article>
+                <article>
+                    <h3>Семейный отдых</h3>
+                    <p>Специальные зоны для детей, санные трассы, тюбинги и развлечения для всей семьи в уникальной природной зоне.</p>
+                </article>
+                <article>
+                    <h3>Заповедник "Столбы"</h3>
+                    <p>Парк граничит с известным заповедником, что позволяет совмещать активный отдых с пешими прогулками по уникальным скальным образованиям.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer id="contacts">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Режим работы</h3>
+                <p><strong>Горнолыжные трассы:</strong><br>
+                Пн-Вс: 9:00 - 21:00</p>
+                <p><strong>Кассы:</strong><br>
+                Пн-Вс: 8:30 - 20:30</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p><strong>Адрес:</strong><br>
+                Красноярский край, заповедник "Столбы"</p>
+                <p><strong>Телефон:</strong><br>
+                +7 (391) 123-45-67</p>
+                <p><strong>Email:</strong><br>
+                <a href="mailto:info@stolby-park.ru">info@stolby-park.ru</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Социальные сети</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">VK</a>
+                    <a href="#" class="social-link">Telegram</a>
+                    <a href="#" class="social-link">YouTube</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Горнолыжный парк "Столбы". Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
